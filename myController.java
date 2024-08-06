@@ -74,9 +74,48 @@ public class myController {
 	              			
 	              			prodJDBCTemp.ins_Prodotto(nome, descrizione, prezzo, img, qnt);
 	              			
-	              			return ResponseEntity.ok("Prodotto " +  nome  + " aggiunto con successo!");
+	              			            return ResponseEntity.ok("Prodotto " +  nome  + " aggiunto con successo!");
 
 	                  
 	                  }
+	                      
+	                      
+	                      @PostMapping("/delete")
+	              		  public ResponseEntity<String> getDelete(@RequestParam("nome") String nome){
+	              			
+	              			     prodJDBCTemp.delete(nome);
+	              			
+	              			                 return ResponseEntity.ok("Prodotto " +  nome  + " cancellato con successo!");
+	              		}
+	                      
+	                      
+	                      @PostMapping("/process")
+	              		public String getProcess(@RequestParam ("qnts") String[] listaQnt, Model model) {
+	              			
+	              			ArrayList<Ordini> listaOrdini= new ArrayList();
+	              			
+	              			double somma=0;
+	              			ArrayList<prodotti> lista= prodJDBCTemp.getProdotti();
+	              			
+	              			for(int i=0; i<lista.size(); i++) {
+	              				
+	              				if( !listaQnt[i].equals("0")) {
+	              					listaI.add(lista.get(i).img);
+	              					Ordini O1= new Ordini();
+	              					O1.setNome(lista.get(i).nome);
+	              					O1.setQnt(Integer.parseInt(listaQnt[i]));
+	              				
+	              					listaOrdini.add(O1);
+	              					
+	              					somma+= lista.get(i).getPrezzo() * O1.getQnt();
+	              					sommaOrdini += lista.get(i).getPrezzo() * O1.getQnt();
+	              				}
+	              			}
+	              			
+	              			model.addAttribute("lista", listaOrdini);
+	              			model.addAttribute( "somma",somma);
+	              			
+	              			return ("");
+	              		}
 	
 }
