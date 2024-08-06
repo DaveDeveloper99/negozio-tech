@@ -216,5 +216,4 @@ main {
 .card:hover img {
 	transform: rotate(-20deg);
 	scale: 1;
-	overflow: hidden;
 }
