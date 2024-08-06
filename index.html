@@ -45,7 +45,7 @@
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="collapse navbar-collapse" id="navbar">
                 <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="#">Computer</a>
@@ -64,11 +64,11 @@
             </div>
         </nav>
     </header>
- 
+
     <!-- carosello a 4 elementi-->
     <section>
         <div class="frame">
-            <div class="card card-1">
+            <div class="cardc card-1">
               <div class="top"></div>
                 <div class="content">
                           <div class="line" style="width: 100%"></div>
@@ -78,8 +78,8 @@
                           <div class="line" style="width: 50%"></div>	
                 </div>
             </div>
- 
-            <div class="card card-2">
+            
+            <div class="cardc card-2">
               <div class="top"></div>
               <div class="content">
                           <div class="line" style="width: 100%"></div>
@@ -89,8 +89,8 @@
                           <div class="line" style="width: 50%"></div>	
                       </div>
             </div>
- 
-            <div class="card card-3">
+            
+            <div class="cardc card-3">
               <div class="top"></div>
               <div class="content">
                           <div class="line" style="width: 100%"></div>
@@ -100,10 +100,10 @@
                           <div class="line" style="width: 50%"></div>	
                       </div>
             </div>
- 
-             <div class="card card-4">
+            
+             <div class="cardc card-4">
               <div class="top"></div>
-              <div class="content">ciao
+              <div class="content">
                           <div class="line" style="width: 100%"></div>
                           <div class="line" style="width: 90%"></div>
                           <div class="line" style="width: 70%"></div>
@@ -113,9 +113,139 @@
             </div>
         </div>
     </section>
+
+    <main>
+        <section id="pc" class="">
+            <div class="container-fluid">
+                <h2 class="text-center text-warning">I nostri Computer</h2>
+                <div class="row mt-3">
+                    <div class="col-lg-3">
+                        <div class="card">
+                            <img src="" class="card-img-top" alt="">
+                            <div class="card-body">
+                                <h3 class="card-title">Nome pc</h3>
+                                <p class="card-text">Caratteristiche</p>
+                            </div>
+                            <div class="card-footer">
+                                <span class="price fw-bold">€8.50</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="smartphone" class="notvisible">
+            <div class="container-fluid">
+                <h2 class="text-center text-warning">I nostri Smartphone</h2>
+                <div class="row mt-3">
+                    <div class="col-lg-3">
+                        <div class="card">
+                            <img src="" class="card-img-top" alt="">
+                            <div class="card-body">
+                                <h3 class="card-title">Nome telefono</h3>
+                                <p class="card-text">Caratteristiche</p>
+                            </div>
+                            <div class="card-footer">
+                                <span class="price fw-bold">€9.50</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="photocamera" class="notvisible">
+            <div class="container-fluid">
+                <h2 class="text-center text-warning">Le nostre macchine fotografiche</h2>
+                <div class="row mt-3">
+                    <div class="col-lg-3">
+                        <div class="card">
+                            <img src="" class="card-img-top" alt="">
+                            <div class="card-body">
+                                <h3 class="card-title">Nome photo</h3>
+                                <p class="card-text">Caratteristiche</p>
+                            </div>
+                            <div class="card-footer">
+                                <span class="price fw-bold">€7.50</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="TV" class="notvisible">
+            <div class="container-fluid">
+                <h2 class="text-center text-warning">Le nostre SmartTV</h2>
+                <div class="row mt-3">
+                    <div class="col-lg-3">
+                        <div class="card">
+                            <img src="" class="card-img-top" alt="">
+                            <div class="card-body">
+                                <h3 class="card-title">Nome TV</h3>
+                                <p class="card-text">Caratteristiche</p>
+                            </div>
+                            <div class="card-footer">
+                                <span class="price fw-bold">€5.50</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contatti">
+            <div class="container">
+                <h2 class="text-center text-warning">Contattaci</h2>
+                <form action="/submit-contatti" method="post">
+                    <div class="mb-3">          
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Inserisci il tuo nome"required>
+                    </div>
+                    <div class="mb-3">               
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Inserisci la tua Email" required>
+                    </div>
+                    <div class="mb-3">               
+                        <select id="opzioni" name="opzioni" class="form-select" required>
+                            <option value="opzione1">Ci stai contattando per...</option>
+                            <option value="opzione2">Vendita</option>
+                            <option value="opzione3">Assistenza</option>
+                            <option value="opzione4">Supporto</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">                 
+                        <textarea class="form-control" id="message" name="message" rows="4" placeholder="Scrivi qui il tuo messaggio" required></textarea>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <button type="submit" class="btn btn-warning">Invia</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+       <div class="container-fluid text-bg-warning d-flex footer">
+            <p>&copy; 2024 Gruppo 2</p>            
+            <ul class="navbar-nav justify-content-end">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#"><i class="fa-brands fa-square-facebook fa-2x logo"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fa-brands fa-instagram fa-2x logo"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fa-brands fa-x-twitter fa-2x logo"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"><i class="fa-brands fa-youtube fa-2x logo"></i></a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+
+    <a href="#top" class="topbutton" id="back-to-top"><img width="40" height="40" src="https://img.icons8.com/ios-filled/50/chevron-up.png" alt="chevron-up"/></a>
  
- 
- 
+
+
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="js/scripts.js"></script>
 </body>

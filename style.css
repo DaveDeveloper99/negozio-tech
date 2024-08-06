@@ -1,0 +1,201 @@
+@charset "UTF-8";
+
+/* Css relativo al carosello */
+:root {
+    --bg: #6639a6;
+    --top: #FFCE4E;
+    --line: #E9E9E9;
+    --translate: 300px;
+}
+
+.frame {
+  width: 100%;
+  height: 30vh;
+  background: var(--bg);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cardc {
+	position: absolute;
+	width: 300px;
+	height: 260px;
+	background: #fff;
+	border-radius: 8px;
+	overflow: auto;
+	box-shadow: 4px 8px 12px 0px rgba(0,0,0,0.2); }
+  
+.top {
+		width: 100%;
+		height: 20%;
+		background: var(--top);
+	}
+  
+.content {
+		padding: 10% 8%;
+	}
+	
+.line {
+		height: 14px;
+		background: var(--line);
+		margin-bottom: 14px;
+    border-radius: 10px;
+	}
+
+
+.card-1 {
+	animation: switch-1 7s ease-in-out infinite both;	
+}
+
+.card-2 {
+	animation: switch-2 7s ease-in-out infinite both;	
+}
+
+.card-3 {
+	animation: switch-3 7s ease-in-out infinite both;	
+}
+
+.card-4 {
+	animation: switch-4 7s ease-in-out infinite both;	
+}
+
+@keyframes switch-1 {
+	0%, 100% {
+		transform: translateX(0) scale(1);
+		box-shadow: 4px 8px 12px 0px rgba(0,0,0,0.2);
+        z-index: 4;
+	}
+	25% {
+		transform: translateX(300px) scale(.7);
+		box-shadow: 2px 4px 6px 0px rgba(0,0,0,0.2);
+        z-index: 0;
+	}
+	50% {
+		transform: translateX(0) scale(.7);
+		box-shadow: 2px 4px 6px 0px rgba(0,0,0,0.2);
+    z-index: 0;
+	}
+  75%{
+    transform: translateX(-300px) scale(.7);
+		box-shadow: 2px 4px 6px 0px rgba(0,0,0,0.2);
+    z-index: 0;
+  }
+}
+
+@keyframes switch-2 {
+	0%,100%{
+    transform: translateX(-300px) scale(.7);
+		box-shadow: 2px 4px 6px 0px rgba(0,0,0,0.2);
+    z-index: 0;
+    }
+    25% {
+		transform: translateX(0) scale(1);
+		box-shadow: 4px 8px 12px 0px rgba(0,0,0,0.2);
+    z-index: 4;
+	}
+	50% {
+		transform: translateX(300px) scale(.7);
+		box-shadow: 2px 4px 6px 0px rgba(0,0,0,0.2);
+    z-index: 0;
+	}
+	75% {
+		transform: translateX(0) scale(.7);
+		box-shadow: 2px 4px 6px 0px rgba(0,0,0,0.2);
+    z-index: 0;
+	}
+  
+  }
+
+@keyframes switch-3 {
+	0%,100% {
+		transform: translateX(0) scale(.7);
+		box-shadow: 2px 4px 6px 0px rgba(0,0,0,0.2);
+    z-index: 0;
+	}
+  25%{
+    transform: translateX(-300px) scale(.7);
+		box-shadow: 2px 4px 6px 0px rgba(0,0,0,0.2);
+    z-index: 0;
+  }
+  50% {
+		transform: translateX(0) scale(1);
+		box-shadow: 4px 8px 12px 0px rgba(0,0,0,0.2);
+    z-index: 4;
+	}
+	75% {
+		transform: translateX(300px) scale(.7);
+		box-shadow: 2px 4px 6px 0px rgba(0,0,0,0.2);
+    z-index: 0;
+	}
+	
+}
+
+@keyframes switch-4 {
+	0%,100% {
+		transform: translateX(300px) scale(.7);
+		box-shadow: 2px 4px 6px 0px rgba(0,0,0,0.2);
+    z-index: 0;
+	}
+	25% {
+		transform: translateX(0) scale(.7);
+		box-shadow: 2px 4px 6px 0px rgba(0,0,0,0.2);
+    z-index: 0;
+	}
+  50%{
+    transform: translateX(-300px) scale(.7);
+		box-shadow: 2px 4px 6px 0px rgba(0,0,0,0.2);
+    z-index: 0;
+  }
+  75% {
+		transform: translateX(0) scale(1);
+		box-shadow: 4px 8px 12px 0px rgba(0,0,0,0.2);
+    z-index: 4;
+	}
+} 
+
+/* CSS per il footer */
+.footer {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.footer p {
+	margin-top: auto;
+}
+
+.footer ul {
+	flex-direction: row;
+}
+
+.footer ul li {
+	margin: auto 15px;
+}
+
+/* visibilità sezioni */
+
+.notvisible {
+	display: none;
+}
+
+main {
+	margin: 50px auto;
+}
+
+#contatti {
+	margin: 50px auto;
+}
+
+.topbutton {
+	border: 2px solid #FFCE4E;
+    height: 46px;
+    width: 46px;
+    border-radius: 50px;
+    position: fixed;
+    bottom: 60px;
+    right: 30px;
+    text-align: center;
+}
