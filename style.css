@@ -181,6 +181,7 @@
 	display: none;
 }
 
+/*set margini per un po' di ordine */
 main {
 	margin: 50px auto;
 }
@@ -188,6 +189,8 @@ main {
 #contatti {
 	margin: 50px auto;
 }
+
+/*pulsante per tornare in cima alla pagina */
 
 .topbutton {
 	border: 2px solid #FFCE4E;
@@ -198,4 +201,20 @@ main {
     bottom: 60px;
     right: 30px;
     text-align: center;
+}
+
+/*animazione immagini card */
+.card {
+	overflow: hidden;
+}
+
+.card img {
+	transition: all 1s;
+	scale: 0.7;
+}
+
+.card:hover img {
+	transform: rotate(-20deg);
+	scale: 1;
+	overflow: hidden;
 }
