@@ -48,16 +48,16 @@
             <div class="collapse navbar-collapse" id="navbar">
                 <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#pc">Computer</a>
+                    <a id="nav-link-pc" class="nav-link active" aria-current="page" href="#pc">Computer</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#smartphone">Smartphone</a>
+                    <a id="nav-link-smartphone" class="nav-link" href="#smartphone">Smartphone</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#photocamera">Macchine Fotografiche</a>
+                    <a id="nav-link-photocamera" class="nav-link" href="#photocamera">Macchine Fotografiche</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#TV">SmartTV</a>
+                    <a id="nav-link-TV" class="nav-link" href="#TV">SmartTV</a>
                 </li>
                 </ul>
             </div>
@@ -121,7 +121,7 @@
                 <div class="row mt-3">
                     <div class="col-lg-3">
                         <div class="card">
-                            <img src="" class="card-img-top" alt="">
+                            <img src="img/favicon.ico" class="card-img-top" alt="">
                             <div class="card-body">
                                 <h3 class="card-title">Nome pc</h3>
                                 <p class="card-text">Caratteristiche</p>
@@ -197,7 +197,7 @@
                 <h2 class="text-center text-warning">Contattaci</h2>
                 <form action="/submit-contatti" method="post">
                     <div class="mb-3">          
-                        <input type="email" class="form-control" id="email" name="email" placeholder="Inserisci il tuo nome"required>
+                        <input type="text" class="form-control" id="nome" name="nome" placeholder="Inserisci il tuo nome"required>
                     </div>
                     <div class="mb-3">               
                         <input type="email" class="form-control" id="email" name="email" placeholder="Inserisci la tua Email" required>
@@ -247,6 +247,7 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="js/scripts.js"></script>
 </body>
 </html>
