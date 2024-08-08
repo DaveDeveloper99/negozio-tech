@@ -8,10 +8,12 @@
             margin: 0;
             padding: 0;
             height: 100%;
-            overflow: hidden;
+            overflow-x: hidden; /* Previene lo scroll orizzontale */
+            background-color: #e0f7fa; /* Celeste chiaro tendente al bianco */
         }
         .container {
             display: flex;
+            flex-wrap: wrap; /* Permette il wrapping delle card */
             justify-content: space-between;
             margin: 20px;
             position: relative;
@@ -23,7 +25,9 @@
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             padding: 20px;
-            width: 45%;
+            width: calc(50% - 20px); /* 50% della larghezza meno il margine */
+            box-sizing: border-box; /* Include il padding e il bordo nella larghezza */
+            margin-bottom: 20px; /* Spazio tra le card */
         }
         .card h2 {
             text-align: center;
@@ -49,23 +53,21 @@
         button:hover {
             background-color: #218838;
         }
-        .bg-image {
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 100%;
-            width: 100%;
-            object-fit: cover;
-            z-index: -1;
-        }
         .content {
             position: relative;
             z-index: 2;
+            padding-bottom: 40px; /* Spazio per evitare che il contenuto sia coperto dalla barra di scorrimento */
+        }
+        h1 {
+            color: #d32f2f; /* Colore rosso cremisi */
+            font-weight: bold; /* Titolo in grassetto */
+            text-align: center; /* Centrato orizzontalmente */
+            margin-top: 20px; /* Margine superiore per distanziarlo dal bordo superiore */
+            margin-bottom: 20px; /* Margine inferiore per distanziarlo dal contenuto sottostante */
         }
     </style>
 </head>
 <body>
-    <img src="/img/magazzino.jpg" class="bg-image" alt="Sfondo">
     <div class="content">
         <h1>Gestione Prodotti in Ingresso</h1>
         <div class="container">
@@ -76,13 +78,28 @@
                     <label for="nome">Inserisci nome:</label>
                     <input type="text" id="nome" name="nome" required>
                     <label for="descrizione">Inserisci la descrizione:</label>
-                    <input type="text" id="descrizione" name="descrizione" required>
+                    <input type="text" id="descrizione" name="descrizione" >
                     <label for="prezzo">Inserisci il prezzo:</label>
                     <input type="number" id="prezzo" name="prezzo" step="0.01" required>
                     <label for="img">Inserisci l'immagine:</label>
-                    <input type="text" id="img" name="img" required>
+                    <input type="text" id="img" name="img" >
                     <label for="qnt">Inserisci la quantità:</label>
-                    <input type="number" id="qnt" name="qnt" required>
+                    <input type="number" id="qnt" name="qnt">
+                    
+                    <!-- RADIO TYPE -->
+                    <!-- COMPUTER -->
+                    <input type="radio" id="computer" name="tipologia" value="computer">
+                    <label for="computer">Computer</label><br>
+                    <!-- SMARTPHONE -->
+                    <input type="radio" id="smartphone" name="tipologia" value="smartphone">
+                    <label for="smartphone">Smartphone</label><br>
+                    <!-- MACCHINE FOTOGRAFICHE -->
+                    <input type="radio" id="macchinefotografiche" name="tipologia" value="macchinefotografiche">
+                    <label for="macchinefotografiche">Macchine Fotografiche</label><br>
+                    <!-- SMART TV -->
+                    <input type="radio" id="smarttv" name="tipologia" value="smarttv">
+                    <label for="smarttv">SmartTV</label><br>
+  
                     <button type="submit">Inserisci Prodotto</button>
                 </form>
             </div>
@@ -93,6 +110,35 @@
                 <form action="/delete" method="post">
                     <label for="nome">Nome del prodotto da cancellare:</label>
                     <input type="text" id="nome" name="nome" required>
+                    
+                    <!-- RADIO TYPE -->
+                    <!-- COMPUTER -->
+                    <input type="radio" id="delete-computer" name="tipologia" value="computer">
+                    <label for="delete-computer">Computer</label><br>
+                    <!-- SMARTPHONE -->
+                    <input type="radio" id="delete-smartphone" name="tipologia" value="smartphone">
+                    <label for="delete-smartphone">Smartphone</label><br>
+                    <!-- MACCHINE FOTOGRAFICHE -->
+                    <input type="radio" id="delete-macchinefotografiche" name="tipologia" value="macchinefotografiche">
+                    <label for="delete-macchinefotografiche">Macchine Fotografiche</label><br>
+                    <!-- SMART TV -->
+                    <input type="radio" id="delete-smarttv" name="tipologia" value="smarttv">
+                    <label for="delete-smarttv">SmartTV</label><br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
                     <button type="submit">Cancella Prodotto</button>
                 </form>
             </div>

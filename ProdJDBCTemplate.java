@@ -23,8 +23,8 @@ public class ProdJDBCTemplate {
 	                 
 	                 //REGISTRAZIONE NUOVO RECORD NELLA TABELLA 
 	
-	                 public int ins_Prodotto( String nome, String descrizione, double prezzo, String img, int qnt) {
-		                        String query = "INSERT INTO prodotti( nome, descrizione, prezzo, img, qnt) VALUES (?, ?, ?, ?, ?)";
+	                 public int ins_Prodotto( String nome, String descrizione, double prezzo, String img, int qnt, String tipologia) {
+		                        String query = "INSERT INTO " + tipologia +" ( nome, descrizione, prezzo, img, qnt) VALUES (?, ?, ?, ?, ?)";
 				    
 		                               return jdbcTemplateObject.update( query, nome, descrizione, prezzo, img, qnt);
 			
@@ -32,8 +32,8 @@ public class ProdJDBCTemplate {
 	                 
 	                
 	                 // CANCELLAZIONE DI UN RECORD DALLA TABELLA
-	                 public int delete(String nome) {
-	             	            String query = "DELETE FROM 'Prodotti' WHERE nome=?";
+	                 public int delete(String nome, String tipologia) {
+	             	            String query = "DELETE FROM " + tipologia + " WHERE nome=?";
 	             		   
 	             		              return jdbcTemplateObject.update(query, nome);
 	             	           }
@@ -41,11 +41,11 @@ public class ProdJDBCTemplate {
 	                 
 	                 //RECUPER RECORD E MAPPATURA SU LISTA PRODOTTI
 	                 
-	                 public ArrayList<prodotti> getProdotti(){
+	                 public ArrayList<prodotti> getProdotti(String tipologia){
 	                  	    ResultSet rs1 = null;
 	                  	
 	                 
-	                                       String query = "SELECT * FROM  Prodotti";
+	                                       String query = "SELECT * FROM " +  tipologia;
 	                                              return jdbcTemplateObject.query(query, new ResultSetExtractor<ArrayList<prodotti>>() {
 	                         	
 	                                       @Override
